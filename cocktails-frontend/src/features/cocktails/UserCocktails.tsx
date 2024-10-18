@@ -14,7 +14,7 @@ const UserCocktails = () => {
   const user = useAppSelector(selectUser);
 
   let content: React.ReactNode = (
-    <Grid2 container mt={5} mb={5}>
+    <Grid2 container sx={{ marginInline: 'auto', marginTop: '10%' }}>
       <Grid2 component={Typography} variant="body1" color="text.secondary">
         You haven't added any cocktails yet!
       </Grid2>
@@ -22,7 +22,11 @@ const UserCocktails = () => {
   );
 
   if (isFetching) {
-    content = <CircularProgress />;
+    content = (
+      <Grid2 sx={{ marginInline: 'auto', marginTop: '10%' }}>
+        <CircularProgress />
+      </Grid2>
+    );
   } else if (cocktails.length > 0) {
     const visibleCocktails = cocktails.filter((cocktail) => {
       return user && cocktail.user === user._id;
@@ -38,13 +42,11 @@ const UserCocktails = () => {
   }, [dispatch]);
 
   return (
-    <ContentContainer container direction="column" spacing={3} sx={{ paddingInline: '25px', pt: 2 }}>
+    <ContentContainer container direction="column" spacing={3} sx={{ paddingInline: '25px', pt: 1 }}>
       <Grid2>
         <Typography variant="h4">Your cocktails</Typography>
       </Grid2>
-      <Grid2 container justifyContent="space-between">
-        {content}
-      </Grid2>
+      <Grid2 container>{content}</Grid2>
     </ContentContainer>
   );
 };

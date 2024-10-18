@@ -15,21 +15,21 @@ const run = async () => {
 
   const [user] = await User.create(
     {
-      username: 'user@music.local',
+      username: 'user@gmail.local',
       password: '1nkn$jb',
       confirmPassword: '1nkn$jb',
       role: 'user',
       displayName: 'User',
-      avatar: 'fixtures/user_avatar.jpeg',
+      avatar: 'fixtures/user-avatar.jpeg',
       token: crypto.randomUUID(),
     },
     {
-      username: 'admin@music.local',
+      username: 'admin@gmail.local',
       password: 'ved67#slm',
       confirmPassword: 'ved67#slm',
       role: 'admin',
       displayName: 'Admin',
-      avatar: null,
+      avatar: 'fixtures/admin-avatar.jpeg',
       token: crypto.randomUUID(),
     },
   );
@@ -93,6 +93,28 @@ const run = async () => {
         },
       ],
       isPublished: true,
+    },
+    {
+      user: user,
+      name: 'Strawberry Shivers',
+      image: 'fixtures/strawberry-shivers.jpg',
+      recipe:
+        'Place all ingredients in the blender jar - cover and whiz on medium speed until well blended. Pour in one tall, 2 medium or 3 small glasses and drink up.',
+      ingredients: [
+        {
+          name: 'Strawberries',
+          amount: '1/2 cup',
+        },
+        {
+          name: 'Honey',
+          amount: '4 tsp',
+        },
+        {
+          name: 'Water',
+          amount: '1/2 cup',
+        },
+      ],
+      isPublished: false,
     },
   );
 

@@ -46,15 +46,24 @@ const AllCocktails = () => {
   };
 
   let content: React.ReactNode = (
-    <Grid2 container mt={5} mb={5}>
-      <Grid2 component={Typography} variant="body1" color="text.secondary">
+    <Grid2 container>
+      <Grid2
+        component={Typography}
+        variant="body1"
+        color="text.secondary"
+        sx={{ marginInline: 'auto', marginTop: '10%' }}
+      >
         There are no cocktails here!
       </Grid2>
     </Grid2>
   );
 
   if (isFetching) {
-    content = <CircularProgress />;
+    content = (
+      <Grid2 sx={{ marginInline: 'auto', marginTop: '10%' }}>
+        <CircularProgress />
+      </Grid2>
+    );
   } else if (cocktails.length > 0) {
     const visibleCocktails = cocktails.filter((cocktail) => {
       return cocktail.isPublished || (user && user.role === 'admin');
@@ -79,13 +88,11 @@ const AllCocktails = () => {
   }, [dispatch]);
 
   return (
-    <ContentContainer container direction="column" spacing={3} sx={{ paddingInline: '25px', pt: 2 }}>
+    <ContentContainer container direction="column" spacing={3} sx={{ paddingInline: '25px', pt: 1 }}>
       <Grid2>
         <Typography variant="h4">All cocktails</Typography>
       </Grid2>
-      <Grid2 container justifyContent="space-between">
-        {content}
-      </Grid2>
+      <Grid2 container>{content}</Grid2>
     </ContentContainer>
   );
 };

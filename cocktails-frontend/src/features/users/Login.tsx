@@ -40,13 +40,18 @@ const Login = () => {
   return (
     <Box
       sx={{
-        mt: '100px',
+        marginInline: 'auto',
+        backgroundColor: 'white',
+        mt: '8%',
+        width: '350px',
+        paddingBlock: '35px',
+        borderRadius: '20px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
-      <Avatar sx={{ m: 1, bgColor: 'secondary.main' }}>
+      <Avatar sx={{ bgColor: 'secondary.main' }}>
         <LockOpenIcon />
       </Avatar>
       <Typography component="h1" variant="h5">

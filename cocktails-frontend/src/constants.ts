@@ -20,7 +20,7 @@ export const ContentContainer = styled(Grid2)({
 });
 
 export const CardItem = styled(Box)({
-  padding: '12px',
+  padding: '15px',
   backgroundColor: 'white',
   display: 'inline-block',
   borderRadius: '15px',

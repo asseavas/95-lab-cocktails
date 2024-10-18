@@ -10,6 +10,7 @@ import Error404 from './UI/errors/Error404';
 import AllCocktails from './features/cocktails/AllCocktails';
 import NewCocktail from './features/cocktails/NewCocktail';
 import UserCocktails from './features/cocktails/UserCocktails';
+import OneCocktail from './features/cocktails/OneCocktail';
 
 const App = () => {
   const user = useAppSelector(selectUser);
@@ -34,7 +35,7 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="/cocktails/:id" element={<Typography>One cocktail</Typography>} />
+          <Route path="/cocktails/:id" element={<OneCocktail />} />
           <Route path="/cocktails/user" element={<UserCocktails />} />
           <Route
             path="/cocktails/user"

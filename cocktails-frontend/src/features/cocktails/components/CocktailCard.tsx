@@ -25,21 +25,19 @@ const CocktailCard: React.FC<Props> = ({ cocktail, isDeleting, onDelete, isPubli
   return (
     <CardItem
       sx={{
-        height: user?.role === 'admin' ? '330px' : !cocktail.isPublished ? '315px' : '300px',
+        height: user?.role === 'admin' ? '330px' : !cocktail.isPublished ? '320px' : '280px',
       }}
     >
       <CardLinkItem to={`/cocktails/${cocktail._id}`}>
-        <Grid2 container direction="column" spacing={1}>
-          <Grid2
-            component={CardMedia}
-            image={cardImage}
-            sx={{
-              width: 200,
-              height: 200,
-              borderRadius: '10px',
-            }}
-          />
-        </Grid2>
+        <Grid2
+          component={CardMedia}
+          image={cardImage}
+          sx={{
+            width: 200,
+            height: 200,
+            borderRadius: '10px',
+          }}
+        />
         <Grid2>
           <Typography variant="h6" sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
             {cocktail.name}

@@ -54,13 +54,18 @@ const Register = () => {
   return (
     <Box
       sx={{
-        mt: 5,
+        marginInline: 'auto',
+        backgroundColor: 'white',
+        mt: '4%',
+        width: '450px',
+        paddingBlock: '35px',
+        borderRadius: '20px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
-      <Avatar sx={{ m: 1, bgColor: 'secondary.main' }}>
+      <Avatar sx={{ bgColor: 'secondary.main' }}>
         <LockOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
