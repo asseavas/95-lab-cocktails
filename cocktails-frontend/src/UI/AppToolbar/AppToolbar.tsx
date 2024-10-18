@@ -9,8 +9,8 @@ const AppToolbar = () => {
   const user = useAppSelector(selectUser);
 
   return (
-    <Box sx={{ flexGrow: 1, mt: 2, mb: 2 }}>
-      <AppBar position="sticky" sx={{ background: 'none' }}>
+    <Box sx={{ flexGrow: 1, mb: 3 }}>
+      <AppBar position="sticky">
         <Toolbar sx={{ margin: '0 24px' }}>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
             <StyledToolbarLink to="/">Cocktails</StyledToolbarLink>

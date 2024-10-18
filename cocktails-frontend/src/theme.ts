@@ -1,6 +1,16 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  palette: {
+    mode: 'light',
+    background: {
+      default: '#e4e4e4',
+    },
+    text: {
+      primary: '#000',
+      secondary: '#555',
+    },
+  },
   typography: {
     fontFamily: '"Inter", sans-serif',
   },
@@ -10,10 +20,29 @@ const theme = createTheme({
         variant: 'outlined',
         fullWidth: true,
       },
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '15px',
+            '& fieldset': {
+              border: '1px solid rgba(0, 0, 0, 0.5)',
+            },
+            '&:hover fieldset': {
+              border: '1px solid rgba(0, 0, 0, 0.7)',
+            },
+            '&.Mui-focused fieldset': {
+              border: '1px solid #1976d2',
+            },
+            padding: '8px',
+            '& input': {
+              padding: '8px',
+              fontSize: '15px',
+            },
+          },
+        },
+      },
     },
   },
 });
-
-theme.palette.background.default = '#000';
 
 export default theme;

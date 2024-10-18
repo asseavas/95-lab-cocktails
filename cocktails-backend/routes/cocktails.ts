@@ -17,20 +17,6 @@ cocktailsRouter.get('/', async (req, res, next) => {
   }
 });
 
-cocktailsRouter.get('/user', auth, async (req: RequestWithUser, res, next) => {
-  try {
-    if (!req.user) {
-      return res.status(401).send({ error: 'User not found' });
-    }
-
-    const userCocktails = await Cocktail.find({ user: req.user._id });
-
-    return res.send(userCocktails);
-  } catch (error) {
-    return next(error);
-  }
-});
-
 cocktailsRouter.get('/:id', async (req, res, next) => {
   try {
     const cocktail = await Cocktail.findById(req.params.id);

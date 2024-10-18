@@ -42,6 +42,15 @@ const UserMenu: React.FC<Props> = ({ user }) => {
     return (
       <Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+          <Button
+            component={Link}
+            to="/cocktails/user"
+            sx={{
+              color: 'white',
+            }}
+          >
+            Your cocktails
+          </Button>
           <Typography>{user.displayName}</Typography>
           <Tooltip title="Open settings">
             <IconButton onClick={handleClick} sx={{ p: 0 }}>
